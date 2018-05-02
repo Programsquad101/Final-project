@@ -33,7 +33,7 @@ public class Controller {
 
 		// choose 4 random distinct cards from the deck
 		int count = 0;
-		
+		hjjkfhkdsdf
 		
 		while (count < 4) {// Display only four cards
 			
