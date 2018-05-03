@@ -47,28 +47,43 @@ public class Controller {
 		
 		while (count < 4) {// Display only four cards
 			
-			int card = (int) (Math.random() * 13) + 1;// Ignore zero
+			int card1 = (int) (Math.random() * 12) + 1;// Ignore zero
+			int card2 = (int) (Math.random() * 12) + 1;// Ignore zero
+			int card3 = (int) (Math.random() * 12) + 1;// Ignore zero
+			int card4 = (int) (Math.random() * 12) + 1;// Ignore zero
+
 			
-			if (randomCards[card] = !randomCards[card]) 
+			if ((randomCards[card1] = !randomCards[card2]) && (randomCards[card1] = !randomCards[card3]) && 
+				(randomCards[card1] = !randomCards[card4]) && (randomCards[card2] = !randomCards[card3])&& 
+				(randomCards[card2] = !randomCards[card4]) && (randomCards[card3] = !randomCards[card4])) 
 			{
 				
 				String[] cards = { "clubs", "diamonds", "hearts", "spades" };
 				
-				String name = cards[(int) (Math.random() * cards.length)];
-				
-				randomCards[card] = true;
-				
-				Image image = new Image("png/" + card + "_of_" + name + ".png");
-
-				imgCard1.setImage(image);
-				imgCard2.setImage(image);
-				imgCard3.setImage(image);
-				imgCard4.setImage(image);
+				String name1 = cards[(int) (Math.random() * cards.length)];
+				String name2 = cards[(int) (Math.random() * cards.length)];
+				String name3 = cards[(int) (Math.random() * cards.length)];
+				String name4 = cards[(int) (Math.random() * cards.length)];
 
 				
-				System.out.println(++card);//testing
+				randomCards[card1] = true;
 				
-				int value = card % 13;
+				Image image1 = new Image("png/" + (card1+1) + "_of_" + name1 + ".png");
+				Image image2 = new Image("png/" + (card2+1) + "_of_" + name2 + ".png");
+				Image image3 = new Image("png/" + (card3+1) + "_of_" + name3 + ".png");
+				Image image4 = new Image("png/" + (card4+1) + "_of_" + name4 + ".png");
+
+
+
+
+				imgCard1.setImage(image1);
+				imgCard2.setImage(image2);
+				imgCard3.setImage(image3);
+				imgCard4.setImage(image4);
+
+				
+				
+				int value = card1 % 13;
 				
 				validNumbers[count] = (value == 0) ? 13 : value;
 				count++;
